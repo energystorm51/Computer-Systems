@@ -2,3 +2,15 @@
 // (R0, R1 refer to RAM[0], and RAM[1], respectively.)
 
 // Put your code here.
+@1
+D = M
+@END
+D; JGT
+D = -D
+@END
+
+(END)
+@0
+M = D
+@END
+0;JMP
