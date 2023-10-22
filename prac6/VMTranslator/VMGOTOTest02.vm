@@ -1,0 +1,4 @@
+goto END
+
+label END
+goto END

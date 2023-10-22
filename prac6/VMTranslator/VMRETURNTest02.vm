@@ -1,0 +1,14 @@
+push constant 3
+push local 1
+push argument 0
+call testFunction 3
+goto END
+
+
+function testFunction 0
+push constant 50
+neg
+return
+
+label END
+goto END

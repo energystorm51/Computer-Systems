@@ -1,0 +1,11 @@
+push constant 5
+push constant 5
+goto EQUAL
+
+label EQUAL
+push constant 1000
+pop local 0
+goto END
+
+label END
+goto END

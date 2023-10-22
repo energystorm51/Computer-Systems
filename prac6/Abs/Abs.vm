@@ -1,0 +1,23 @@
+// Calculates y = |x|
+// x & y are static variables
+
+// Put your code here.
+push static 0
+push constant 0
+lt
+
+// if x < 0, jump to IFNEG
+if-goto IFNEG 
+push static 0
+pop static 1
+goto END
+
+// negate x and store in y
+label IFNEG
+push static 0
+neg
+pop static 1
+goto END
+
+label END
+goto END

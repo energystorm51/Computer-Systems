@@ -1,0 +1,16 @@
+push constant 0
+push constant 5
+goto NOTEQUAL
+
+label EQUAL
+push constant 1000
+pop local 0
+goto END
+
+label NOTEQUAL
+push constant -1111
+pop local 1
+goto END
+
+label END
+goto END

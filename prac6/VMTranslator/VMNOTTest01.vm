@@ -1,0 +1,6 @@
+push constant 20
+not
+goto END
+
+label END
+goto END

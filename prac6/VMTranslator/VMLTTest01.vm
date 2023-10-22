@@ -1,0 +1,7 @@
+push constant 2
+push constant 0
+lt
+goto END
+
+label END
+goto END

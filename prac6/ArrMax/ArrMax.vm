@@ -1,0 +1,64 @@
+// Contains a function ArrMax.arrMax that finds and returns the largest element in the array a of length b.
+// a & b are both supplied as arguments
+
+// ***  PSEUDO CODE ***//
+//initialise variable max = a[0]
+//for index = 1 to b - 1
+//    if (a[index] > max)
+//        max = a[index]
+//    end
+//end
+//return max
+
+// Put your code here.
+
+function ArrMax.arrMax 0
+
+// Initialisation
+push argument 0   // push base address onto the stack
+pop pointer 1     // store base address to 'that'
+push that 0       // push a[0] onto the stack
+pop temp 0        // initialise max to a[0]
+push constant 0   // push 0 onto the stack
+pop temp 1        // initialise counter to 0
+
+// Main Loop
+label LOOP 
+push temp 1       // push counter onto stack
+push argument 1   // push array size onto stack
+eq
+if-goto LOOPEND   // if counter = array size, exit loop 
+
+push argument 0   // push base address onto stack
+push temp 1       // push counter onto stack
+add               // calculates address of a[counter]
+pop pointer 1     // pop new address onto that
+push that 0       // push value at a[counter] onto the stack   
+push temp 0       // push current max onto stack
+gt
+if-goto UPDATEMAX // if a[that] > max, update max
+goto INCREMENTLOOP
+
+label INCREMENTLOOP
+push temp 1
+push constant 1   
+add               // increment counter by 1
+pop temp 1        // pop counter++ to counter
+goto LOOP
+
+label LOOPEND     // push max onto the stack
+push temp 0
+return
+
+label UPDATEMAX
+push that 0       // push a[counter] onto stack
+pop temp 0        // pop a[counter] onto max
+goto INCREMENTLOOP
+
+
+
+
+
+
+
+

@@ -1,0 +1,9 @@
+// Tests each memory segment
+// push constant 1 (DONE)
+// push local 0 (DONE)
+
+push argument 0
+goto END
+
+label END
+goto END

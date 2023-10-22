@@ -1,0 +1,10 @@
+push constant 3
+call testFunction 1
+goto END
+
+
+function testFunction 0
+return
+
+label END
+goto END

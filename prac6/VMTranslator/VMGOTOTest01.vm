@@ -1,0 +1,12 @@
+goto FIRST
+
+label FIRST
+pop local 0
+goto SECOND
+
+label SECOND
+pop local 1
+goto END
+
+label END
+goto END

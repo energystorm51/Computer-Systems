@@ -1,0 +1,85 @@
+// Calculates a = x*y
+// a is a local variable
+// x & y are static variables
+
+// Put your code here.
+
+// Initialize a to 0
+push constant 0
+pop local 0
+
+// Check for -y
+push static 1
+push constant 0
+lt // If y < 0 is TRUE (-1) goto NEG
+if-goto NEG
+
+// Jump to EQUAL if x OR y is equal to 0
+push static 1
+push constant 0
+eq
+if-goto EQUAL
+push static 0
+push constant 0
+eq
+if-goto EQUAL
+
+push static 1
+pop static 2 // make a copy to local[2] (counter)
+goto LOOP // Otherwise goto LOOP
+
+
+label LOOP
+// Condition: if counter = 0, exit LOOP
+push static 2
+push constant 0
+eq // If y(counter) = 0 is TRUE (-1) goto LOOPEND
+if-goto LOOPEND
+
+// Otherwise, add a copy of x onto a
+push static 0
+push local 0
+add
+pop local 0
+
+// Decrement counter
+push static 2
+push constant 1
+sub
+pop static 2
+goto LOOP
+
+
+label LOOPEND
+push local 1
+push constant 1111
+eq
+if-goto NEGA
+goto END
+
+
+label NEG
+push static 1
+neg
+pop static 2
+push constant 1111
+pop local 1 // flag that y is negative
+goto LOOP
+
+
+label EQUAL
+push constant 0
+pop local 0
+goto END
+
+
+label NEGA
+push local 0
+neg
+pop local 0
+push constant 2
+pop local 1
+goto END
+
+label END
+goto END

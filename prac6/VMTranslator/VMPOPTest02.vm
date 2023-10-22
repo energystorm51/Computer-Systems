@@ -1,0 +1,6 @@
+push constant 2
+pop argument 2
+goto END
+
+label END
+goto END
