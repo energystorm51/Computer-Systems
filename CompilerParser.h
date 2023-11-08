@@ -9,6 +9,9 @@
 
 class CompilerParser {
     public:
+        int current_token_index;
+        std::list<Token*> tokens;
+        
         CompilerParser(std::list<Token*> tokens);
 
         ParseTree* compileProgram();
@@ -29,6 +32,7 @@ class CompilerParser {
         ParseTree* compileExpression();
         ParseTree* compileTerm();
         ParseTree* compileExpressionList();
+        ParseTree* compileSubroutineCall();
         
         void next();
         Token* current();
